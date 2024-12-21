@@ -1,0 +1,118 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px 20px 40px;
+    background: linear-gradient(to right, #B4272F, #29226E);
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.logo img {
+    height: auto;
+    width: 120px;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    text-decoration: bold;
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: black;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    min-width: 200px;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    border-radius: 4px;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f4f4f4;
+    color: #29226E;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: #B7262B;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #B7262B;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+}
