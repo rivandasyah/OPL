@@ -1,0 +1,143 @@
+/* Container and Image Styles */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image {
+  width: 100%;
+  height: 400px; /* Adjusted for desktop display */
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  color: white;
+  z-index: 1;
+}
+
+/* Title Styles */
+.tagline {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tagline-import {
+  font-size: 40px; /* Slightly larger font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white; /* Underline below the text */
+}
+
+/* Import Section */
+.import-section {
+  position: relative;
+  margin-top: 50px;
+}
+
+.bg-sea-truck {
+  width: 100%;
+  height: 450px; /* Adjusted for desktop display */
+  object-fit: cover;
+}
+
+.center-import-content {
+  top: 50%; /* Center text vertically */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center text horizontally and vertically */
+}
+
+/* Import Image */
+.import-image {
+  width: 85%; /* Increased size */
+  height: auto; /* Maintain aspect ratio */
+  margin: 30px auto 0; /* Adjust margin for better alignment */
+  display: block;
+  border: none; /* No border */
+}
+
+/* Details Section Styles */
+.details-section {
+  padding: 50px 20px;
+  background: white;
+  text-align: center;
+}
+
+.details-section p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Freight Types Section */
+.freight-types {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.freight-type {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.freight-type h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.freight-type p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image {
+    height: 300px;
+  }
+
+  .bg-sea-truck {
+    height: 300px;
+  }
+
+  .freight-types {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tagline-import {
+    font-size: 32px; /* Adjust size for smaller screens */
+  }
+
+  .import-image {
+    width: 100%; /* Full width on smaller screens */
+    margin: 20px 0 0;
+  }
+}

@@ -4,15 +4,22 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import React from 'react';
+import AirFreight from "./pages/AirFreight";
+import SeaFreight from "./pages/SeaFreight";
+import CstClear from './pages/CstClear';
 
 function App() {
   return (
     <Router>
-      <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes> 
-      <Footer/>
+        <Route path="/layanan-air" element={<AirFreight />} />
+        <Route path="/layanan-sea" element={<SeaFreight />} />
+        <Route path="/layanan-customs" element={<CstClear />} />
+        <Route path="*" element={<div>Page Not Found</div>} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
