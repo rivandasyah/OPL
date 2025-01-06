@@ -1,0 +1,140 @@
+/* Global Styles */
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Hero Section */
+.bg-customs {
+  height: 300px; /* Adjusted height */
+}
+
+.no-underline {
+  text-decoration: none; /* Removes underline from the tagline */
+}
+
+/* Details Section */
+.details-section {
+  padding: 50px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.details-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* bgClear Section */
+.bg-clear-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.bg-clear {
+  height: 500px; /* Adjusted height for bgClear */
+  object-fit: cover;
+}
+
+.bg-clear-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 60px; /* Larger space between bgDeal and text content */
+  align-items: center;
+  padding: 20px;
+  z-index: 2;
+  color: white;
+}
+
+/* Deal Image (bgDeal) Styling */
+.deal-image-wrapper {
+  flex: 1;
+  max-width: 450px; /* Larger size for bgDeal */
+  height: 100%; /* Ensure consistent height */
+  margin-left: 30px; /* Add larger left margin for spacing */
+}
+
+.bg-deal {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Text Content */
+.text-content {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.8; /* Match line height for better alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 30px; /* Add larger right margin */
+  max-width: calc(100% - 480px); /* Dynamically adjust width to match bgDeal */
+}
+
+.text-content p {
+  margin-bottom: 20px;
+  text-align: justify; /* Align text for a cleaner look */
+}
+
+/* Button Styling */
+.button-wrapper {
+  text-align: right; /* Align button to the right */
+  margin-top: 35px; /* Move button slightly downward */
+}
+
+.contact-button {
+  padding: 8px 16px; /* Adjust button padding */
+  background-color: #B8272C; /* Red button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 19px; /* Adjust button text size */
+}
+
+.contact-button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bg-clear-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px; /* Reduce space between elements */
+  }
+
+  .deal-image-wrapper {
+    max-width: 250px; /* Reduce bgDeal size for smaller screens */
+    margin-left: 0; /* Remove left margin on small screens */
+  }
+
+  .text-content {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    text-align: center;
+    margin-right: 0; /* Remove right margin */
+  }
+
+  .button-wrapper {
+    text-align: center; /* Center the button */
+    margin-top: 15px; /* Reduce spacing */
+  }
+
+  .contact-button {
+    font-size: 14px; /* Smaller button text */
+    padding: 6px 12px; /* Adjust padding for smaller screens */
+  }
+}

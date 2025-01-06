@@ -1,3 +1,4 @@
+/* Header styling */
 .header {
     display: flex;
     justify-content: space-between;
@@ -14,6 +15,7 @@
     width: 120px;
 }
 
+/* Navigation links styling */
 .nav-links ul {
     list-style: none;
     display: flex;
@@ -29,14 +31,22 @@
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
     transition: color 0.3s ease;
 }
 
+/* Active link styling */
 .nav-links a.active {
-    text-decoration: bold;
+    font-weight: bold;
+    color: white; /* Tetap putih untuk konsistensi */
 }
 
+.button.active {
+    font-weight: bold;
+    color: white;
+}
+
+/* Dropdown styling */
 .dropdown {
     position: relative;
     cursor: pointer;
@@ -86,6 +96,7 @@
     border-radius: 4px;
 }
 
+/* Button styling */
 .button {
     background-color: #B7262B;
     color: white;
@@ -97,9 +108,10 @@
 }
 
 .button:hover {
-    background-color: #B7262B;
+    background-color: #A51E24;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
