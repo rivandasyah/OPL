@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import logo from "../assets/logoPutih.png";
 import { FaChevronDown } from "react-icons/fa";
@@ -25,13 +26,16 @@ function Header() {
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setIsOpen(true), 100); // Tambahkan delay kecil
+    timeoutRef.current = setTimeout(() => setIsOpen(true), 100);
   };
 
   const handleMouseLeave = () => {
     clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setIsOpen(false), 100); // Tambahkan delay kecil
+    timeoutRef.current = setTimeout(() => setIsOpen(false), 100);
   };
+
+  // Fungsi untuk menentukan apakah link aktif
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="header">
@@ -73,28 +77,28 @@ function Header() {
               }}
             >
               <li>
-                <NavLink
-                  to="/layanan-air-freight"
-                  className={({ isActive }) => (isActive ? "active" : "")}
+                <Link
+                  to="/layanan-air"
+                  className={isActive("/layanan-air") ? "active" : ""}
                 >
                   Air Freight Service
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/layanan-sea-freight"
-                  className={({ isActive }) => (isActive ? "active" : "")}
+                <Link
+                  to="/layanan-sea"
+                  className={isActive("/layanan-sea") ? "active" : ""}
                 >
                   Sea Freight Service
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/layanan-customs-clearance"
-                  className={({ isActive }) => (isActive ? "active" : "")}
+                <Link
+                  to="/layanan-customs"
+                  className={isActive("/layanan-customs") ? "active" : ""}
                 >
                   Customs Clearance
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </li>

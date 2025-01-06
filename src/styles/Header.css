@@ -5,6 +5,7 @@
 }
 
 /* Styling header secara keseluruhan */
+/* Header styling */
 .header {
     display: flex;
     justify-content: space-between;
@@ -39,6 +40,7 @@
 }
 
 /* Styling untuk menu navigasi utama */
+/* Navigation links styling */
 .nav-links ul {
     list-style: none;
     display: flex;
@@ -48,6 +50,29 @@
 }
 
 /* Dropdown Container */
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+/* Active link styling */
+.nav-links a.active {
+    font-weight: bold;
+    color: white; /* Tetap putih untuk konsistensi */
+}
+
+.button.active {
+    font-weight: bold;
+    color: white;
+}
+
+/* Dropdown styling */
 .dropdown {
     position: relative;
     /* Dibutuhkan untuk positioning dropdown-menu */
@@ -139,6 +164,7 @@
 }
 
 /* Styling the button */
+/* Button styling */
 .button {
     background-color: #B7262B;
     color: white;
@@ -168,7 +194,8 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Media query for mobile responsiveness */
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
