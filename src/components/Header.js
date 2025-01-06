@@ -1,11 +1,37 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../styles/Header.css";
 import logo from "../assets/logoPutih.png";
 import { FaChevronDown } from "react-icons/fa";
 
 function Header() {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleHitungBiayaClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+    setTimeout(() => {
+      const formSection = document.getElementById("hitung-biaya-section");
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setIsOpen(true), 100); // Tambahkan delay kecil
+  };
+
+  const handleMouseLeave = () => {
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setIsOpen(false), 100); // Tambahkan delay kecil
+  };
 
   return (
     <header className="header">
@@ -15,14 +41,17 @@ function Header() {
       <nav className="nav-links">
         <ul>
           <li>
-            <Link to="/" className="active">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Beranda
-            </Link>
+            </NavLink>
           </li>
           <li
             className="dropdown"
-            onMouseEnter={() => setIsDropdownVisible(true)}
-            onMouseLeave={() => setIsDropdownVisible(false)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <div
               style={{
@@ -33,34 +62,54 @@ function Header() {
             >
               <span>Layanan</span>
               <FaChevronDown style={{ marginLeft: "5px" }} />
-            </div>{" "}
-            {isDropdownVisible && (
-              <ul className="dropdown-menu">
-                <li>
-                  <Link to="/layanan-air">Air Freight Service</Link>
-                </li>
-                <li>
-                  <Link to="/layanan-sea">Sea Freight Service</Link>
-                </li>
-                <li>
-                  <Link to="/layanan-customs">Customs Clearance</Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li>
-            <Link to="/tentang-kami" style={{ fontWeight: "normal" }}>
-              Tentang Kami
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/hitung-biaya"
-              className="button"
-              style={{ fontWeight: "normal" }}
+            </div>
+            <ul
+              className="dropdown-menu"
+              style={{
+                visibility: isOpen ? "visible" : "hidden",
+                opacity: isOpen ? 1 : 0,
+                transition:
+                  "visibility 0s linear 0.2s, opacity 0.2s ease-in-out",
+              }}
             >
+              <li>
+                <NavLink
+                  to="/layanan-air-freight"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Air Freight Service
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/layanan-sea-freight"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Sea Freight Service
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/layanan-customs-clearance"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Customs Clearance
+                </NavLink>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <NavLink
+              to="/tentang-kami"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Tentang Kami
+            </NavLink>
+          </li>
+          <li>
+            <button className="button" onClick={handleHitungBiayaClick}>
               Hitung Biaya
-            </Link>
+            </button>
           </li>
         </ul>
       </nav>

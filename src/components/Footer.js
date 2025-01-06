@@ -2,7 +2,7 @@ import React from "react";
 import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import "../styles/Footer.css";
-import Logo from "../assets/logoBerwarna.png"; 
+import Logo from "../assets/logoBerwarna.png";
 
 function Footer() {
   return (
@@ -52,25 +52,21 @@ function Footer() {
             <div className="contact-item">
               <MdPhone className="contact-icon" />
               <span>
-                Telepon <br />
-                +628123456789
+                +6281234515052
               </span>
             </div>
             <div className="contact-item">
               <MdEmail className="contact-icon" />
               <span>
-                Email
-                <br />
-                food@sunshine.id
+                info.oscarlogistics@gmail.com
               </span>
             </div>
             <div className="contact-item">
               <MdLocationOn className="contact-icon" />
               <span>
-                Alamat <br />
-                Jalan jalan No. 99 Airlangga
+                Jalan raya ciangsana raya No.178,
                 <br />
-                Gubeng, Surabaya, Jawa Timur, 11234
+                Kec. gunung putri, Bogor, Indonesia, 16968
               </span>
             </div>
           </div>

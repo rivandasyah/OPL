@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .image-container {
     position: relative;
     width: 100%;
@@ -41,4 +43,298 @@
 .tagline {
     font-size: 40px;
     margin: 0;
+}
+
+.services-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.services-title {
+    font-size: 28px;
+    font-weight: bolder;
+    padding-bottom: 0;
+}
+
+.services-subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-title {
+    font-size: 22px;
+    font-weight: bolder;
+    margin: 5px 0 0 0;
+}
+
+.service-link {
+    padding-bottom: 20px;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #B8272C;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.service-link:hover {
+    color: #B8272C;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.home-container {
+    background: url('../assets/latarBelakang.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    font-family: 'Poppins';
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #822544;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-content h3 svg {
+    font-size: 25px;
+    color: #822544;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: black;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.import-export-section {
+    padding: 40px 0;
+}
+
+.import-export-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.calculate-section {
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.calculate-section .form-card {
+    z-index: 2;
+}
+
+.calculate-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.calculate-section .result-container {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid red;
+    padding: 10px;
+}
+
+
+.form-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.calculate-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    align-items: start;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.form-group div {
+    margin-top: 5px;
+}
+
+.form-group .error-message {
+    color: red;
+    font-size: 14px;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: #B7262B;
+    box-shadow: 0 2px 8px rgba(130, 37, 68, 0.4);
+    outline: none;
+    outline: 2px solid #B7262B;
+}
+
+.form-group:nth-child(5) {
+    grid-column: span 1;
+}
+
+.calculate-button {
+    grid-column: span 1;
+    justify-self: end;
+    padding: 10px 20px;
+    background-color: #B7262B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.calculate-button:hover {
+    background-color: #B7262B;
+    transform: translateY(-2px);
+}
+
+.calculate-button:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
