@@ -13,8 +13,8 @@ function Home() {
 
   return (
     <div>
-      <div className="image-container">
-        <img src={Latar} alt="Background" className="image" />
+      <div className="image-container-home">
+        <img src={Latar} alt="Background" className="image-home" />
         <div className="overlay"></div>
         <div className="overlay-content">
           <img src={Logo} alt="Oscar Project Logistics Logo" className="logo" />

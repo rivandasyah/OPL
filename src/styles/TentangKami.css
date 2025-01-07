@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.image-container {
+.image-container-tentang {
     position: relative;
     width: 100%;
     height: 500px;
@@ -8,11 +8,11 @@
     overflow: hidden;
 }
 
-.image {
+.image-tentang {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 20%;
+    object-position: 50% 30%;
 }
 
 .overlay {
@@ -36,8 +36,9 @@
 }
 
 .overlay-content h2 {
-    font-size: 40px;
-    margin: 0;
+    font-size: 65px;
+    font-weight: bold;
+    margin: 0 0 0 20px;
     position: relative;
     text-align: center;
 }
@@ -46,16 +47,16 @@
     content: ""; 
     position: absolute;
     bottom: -5px; 
-    left: 0;
-    width: 100%; 
-    height: 3px; 
+    left: 30%;
+    width: 40%; 
+    height: 1px; 
     background-color: white;
 }
 
 .profil-perusahaan-section {
     background-color: #002050;
     color: white;
-    padding: 3rem 1rem;
+    padding: 3rem 3rem;
     display: flex;
     justify-content: center;
 }
@@ -75,14 +76,19 @@
 }
 
 .profil-image {
+    margin-left: 40%;
     width: 286px;
     height: 324px;
     border-radius: 8px;
+    margin-top: 30px;
+    
 }
 
 .profil-text {
-    flex: 2;
-    text-align: left;
+    margin-right: 10%;
+    flex: 1;
+    text-align: justify;
+    padding: 1% 0 1% 0;
 }
 
 .profil-text h2 {
@@ -95,45 +101,61 @@
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    max-width: 65%;
+    max-width: 9;
 }
 
-.button-container {
+/* Container for the profile text and contact buttons */
+  .profile-contact {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.message-button,
-.call-button {
-    text-decoration: none;
-    background-color: #8FC3F4;
-    color: white;
-    border-radius: 5px;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  
+  .button-icon {
+    background-color: #8fc3f4;
+    color: #ffffff;
+    border-radius: 10px;
     display: flex;
     align-items: center;
+    padding: 15px;
+    flex: 1;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .button-icon:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
+  
+  .contact-icons {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: #8fc3f4;
+    flex-shrink: 0;
+  }
+  
+  .button-text {
+    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    transition: background-color 0.3s ease;
-    text-align: center;
-}
-
-.message-button:hover,
-.call-button:hover {
-    background-color: #8FC3F4;
-}
-
-.message-button svg,
-.call-button svg {
-    font-size: 1.5rem;
-}
-
-.button-subtext {
-    font-size: 0.85rem;
+    justify-content: center;
+  }
+  
+  .button-text h1 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  .button-text span {
+    font-size: 15px;
     font-weight: normal;
-    color: white;
-}
+  }

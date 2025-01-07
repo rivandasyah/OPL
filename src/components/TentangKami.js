@@ -7,11 +7,11 @@ import TentangPerusahaan from "../assets/bgTentangPerusahaan.jpg";
 function TentangKami() {
   return (
     <div>
-      <div className="image-container">
+      <div className="image-container-tentang">
         <img
           src={HubungiKami}
           alt="Background Hubungi Kami"
-          className="image"
+          className="image-tentang"
         />
         <div className="overlay"></div>
         <div className="overlay-content">
@@ -27,7 +27,6 @@ function TentangKami() {
               className="profil-image"
             />
           </div>
-
           <div className="profil-text">
             <h2>Profil Perusahaan</h2>
             <p>
@@ -37,18 +36,25 @@ function TentangKami() {
               layanan Jasa Handling Import, Sewa Undername Export-Import, Sea
               Freight, Air Freight, Import Door to Door dan Domestik.
             </p>
-            <div className="button-container">
-              <a
-                href="mailto:info.oscarlogistics@gmail.com"
-                className="message-button"
-              >
-                <FaEnvelope /> Kirimkan Pesan
-                <span className="button-subtext">OPL_Indonesia</span>
-              </a>
-              <a href="tel:+6281234515052" className="call-button">
-                <FaPhoneAlt /> Hubungi Kami
-                <span className="button-subtext">+6281234515052</span>
-              </a>
+            <div className="profile-contact">
+              <div className="button-icon">
+                <div className="contact-icons message-icon">
+                  <FaEnvelope />
+                </div>
+                <div className="button-text">
+                  <h1>Kirimkan Pesan</h1>
+                  <span>OPL_Indonesia</span>
+                </div>
+              </div>
+              <div className="button-icon">
+                <div className="contact-icons call-icon">
+                  <FaPhoneAlt />
+                </div>
+                <div className="button-text">
+                  <h1>Hubungi Kami</h1>
+                  <span>+62 812 3451 5052</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

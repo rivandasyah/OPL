@@ -34,7 +34,6 @@ function Header() {
     timeoutRef.current = setTimeout(() => setIsOpen(false), 100);
   };
 
-  // Fungsi untuk menentukan apakah link aktif
   const isActive = (path) => location.pathname === path;
 
   return (

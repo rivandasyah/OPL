@@ -72,95 +72,53 @@
     color: white;
 }
 
-/* Dropdown styling */
 .dropdown {
     position: relative;
-    /* Dibutuhkan untuk positioning dropdown-menu */
     cursor: pointer;
-    /* Tunjukkan bahwa elemen dapat diklik */
 }
 
-/* Dropdown Menu */
 .dropdown-menu {
+    display: none;
     position: absolute;
-    /* Tempelkan ke parent */
     top: 100%;
-    /* Tepat di bawah elemen induk */
     left: 0;
-    display: flex;
-    flex-direction: column;
-    flex: 50%;
-    /* Atur elemen secara vertikal */
-    gap: 0;
-    /* Hilangkan jarak antar elemen */
-    visibility: hidden;
-    /* Sembunyikan saat tidak aktif */
-    opacity: 0;
-    /* Transparansi penuh saat tidak aktif */
     background-color: white;
     color: black;
-    padding: 0;
-    /* Hilangkan padding bawaan */
-    margin: 0;
-    /* Hilangkan margin bawaan */
     list-style: none;
-    /* Hilangkan bullet point pada list */
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 10;
     min-width: 200px;
-    max-width: 300px;
-    transition: visibility 0s linear 0.2s, opacity 0.2s ease-in-out;
     text-align: left;
 }
 
-/* Tampilkan Dropdown saat Hover */
 .dropdown:hover .dropdown-menu {
-    visibility: visible;
-    /* Tampilkan dropdown */
-    opacity: 1;
-    /* Buat terlihat sepenuhnya */
-    transition: visibility 0s linear 0s, opacity 0.2s ease-in-out;
+    display: block;
+    border-radius: 4px;
 }
 
-/* Hilangkan Jarak Antar Item */
 .dropdown-menu li {
     margin: 0;
-    /* Hilangkan margin */
     padding: 0;
-    /* Hilangkan padding */
-}
-
-/* Styling untuk Link Dropdown */
-.dropdown-menu li a {
-    display: block;
-    /* Atur link sebagai blok */
-    margin: 0;
-    /* Hilangkan margin */
-    padding: 10px 16px;
-    /* Tambahkan padding untuk estetika */
-    text-decoration: none;
-    /* Hilangkan garis bawah */
-    color: black;
-    /* Warna teks */
     border-radius: 4px;
-    /* Sedikit membulatkan sudut */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* Efek hover */
-    white-space: nowrap;
-    /* Cegah teks menjadi multi-line */
-    overflow: hidden;
-    /* Hindari elemen keluar dari area */
-    text-overflow: ellipsis;
-    /* Tambahkan elipsis jika teks terlalu panjang */
 }
 
-/* Hover State untuk Link */
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .dropdown-menu li a:hover {
     background-color: #f4f4f4;
-    /* Latar belakang saat hover */
     color: #29226E;
-    /* Warna teks saat hover */
+    border-radius: 4px;
 }
 
 /* Styling the button */
