@@ -2,6 +2,7 @@ import React from "react";
 import Plane from "../assets/bgAir.jpg";
 import Log from "../assets/bgAirlog.jpg";
 import ImporAir from "../assets/importAir.png";
+import ImportProcessFlow from "../assets/importAir.png"; // Gambar proses import
 import "../styles/Air.css";
 
 function AirFreight() {
@@ -29,7 +30,7 @@ function AirFreight() {
 
       {/* Import Process Section */}
       <div className="import-section">
-        <div className="image-container">
+        <div className="image-containerr">
           <img src={Log} alt="Background Air Log" className="image bg-air-log" />
           <div className="overlay"></div>
           <div className="overlay-content">
@@ -38,6 +39,18 @@ function AirFreight() {
             {/* Gambar ImportAir */}
             <img src={ImporAir} alt="Proses Pengiriman via Udara" className="import-image" />
           </div>
+        </div>
+      </div>
+
+      {/* Process Flow Section */}
+      <div className="process-flow-section">
+        <h2 className="tagline tagline-import">Flow Proses Import</h2>
+        <div className="process-content">
+          <img
+            src={ImportProcessFlow}
+            alt="Proses Import Flow"
+            className="process-flow-image"
+          />
         </div>
       </div>
     </div>

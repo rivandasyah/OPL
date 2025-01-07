@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.image-container-tentang {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.image-tentang {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.46);
+    z-index: 1;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+
+.overlay-content h2 {
+    font-size: 65px;
+    font-weight: bold;
+    margin: 0 0 0 20px;
+    position: relative;
+    text-align: center;
+}
+
+.overlay-content h2::after {
+    content: ""; 
+    position: absolute;
+    bottom: -5px; 
+    left: 30%;
+    width: 40%; 
+    height: 1px; 
+    background-color: white;
+}
+
+.profil-perusahaan-section {
+    background-color: #002050;
+    color: white;
+    padding: 3rem 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profil-content {
+    max-width: 1200px;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profil-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profil-image {
+    margin-left: 40%;
+    width: 286px;
+    height: 324px;
+    border-radius: 8px;
+    margin-top: 30px;
+    
+}
+
+.profil-text {
+    margin-right: 10%;
+    flex: 1;
+    text-align: justify;
+    padding: 1% 0 1% 0;
+}
+
+.profil-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.profil-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 9;
+}
+
+/* Container for the profile text and contact buttons */
+  .profile-contact {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  
+  .button-icon {
+    background-color: #8fc3f4;
+    color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    flex: 1;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .button-icon:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
+  
+  .contact-icons {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: #8fc3f4;
+    flex-shrink: 0;
+  }
+  
+  .button-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .button-text h1 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  .button-text span {
+    font-size: 15px;
+    font-weight: normal;
+  }

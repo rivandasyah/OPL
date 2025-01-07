@@ -1,3 +1,10 @@
+/* Styling logo */
+.logo img {
+    height: auto;
+    width: 120px;
+}
+
+/* Styling header secara keseluruhan */
 /* Header styling */
 .header {
     display: flex;
@@ -10,11 +17,29 @@
     z-index: 10;
 }
 
-.logo img {
-    height: auto;
-    width: 120px;
+/* Styling untuk elemen menu di dalam header */
+.nav-links li {
+    position: relative;
 }
 
+/* Styling link menu */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+/* Menandakan menu yang sedang aktif */
+.nav-links .active {
+    font-weight: bold;
+}
+
+.nav-links .button {
+    margin-left: 20px;
+}
+
+/* Styling untuk menu navigasi utama */
 /* Navigation links styling */
 .nav-links ul {
     list-style: none;
@@ -24,6 +49,7 @@
     padding: 0;
 }
 
+/* Dropdown Container */
 .nav-links li {
     position: relative;
 }
@@ -46,7 +72,6 @@
     color: white;
 }
 
-/* Dropdown styling */
 .dropdown {
     position: relative;
     cursor: pointer;
@@ -96,20 +121,37 @@
     border-radius: 4px;
 }
 
+/* Styling the button */
 /* Button styling */
 .button {
     background-color: #B7262B;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 25px;
     border-radius: 20px;
-    font-weight: bold;
+    font-size: 16px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    line-height: 1;
+    margin-top: -5px;
 }
 
+/* Hover effect for button */
 .button:hover {
-    background-color: #A51E24;
+    background-color: #9B1E22;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+
+/* Active state for button */
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

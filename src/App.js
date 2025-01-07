@@ -1,12 +1,13 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import TentangKami from "./components/TentangKami.js";
 import Footer from "./components/Footer";
-import React from 'react';
+import React from "react";
 import AirFreight from "./pages/AirFreight";
 import SeaFreight from "./pages/SeaFreight";
-import CstClear from './pages/CstClear';
+import CstClear from "./pages/CstClear";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/tentang-kami" element={<TentangKami />} />
         <Route path="/layanan-air" element={<AirFreight />} />
         <Route path="/layanan-sea" element={<SeaFreight />} />
         <Route path="/layanan-customs" element={<CstClear />} />
