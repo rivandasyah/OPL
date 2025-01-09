@@ -172,6 +172,9 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
     whatsappMessage
   )}`;
 
+  console.log("Pesan WhatsApp:", whatsappMessage);
+  console.log("Tautan WhatsApp:", whatsappLink);
+
   return (
     <div className="form-card">
       <form className="calculate-form" onSubmit={handleCalculate}>

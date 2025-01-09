@@ -1,95 +1,111 @@
 /* Container and Image Styles */
-.image-container {
+.image-container-sea {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
-.image {
+.image-sea {
   width: 100%;
-  height: 400px; /* Adjusted for desktop display */
+  height: 100%;
+  /* Adjusted for desktop display */
   object-fit: cover;
 }
 
-.bg-sea-truck{
-  height: 450px;
-}
-
-.overlay {
+.overlay-sea {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 98.5%;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .overlay-content-sea {
   position: absolute;
-
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
   color: white;
-  z-index: 1;
 }
 
 /* Title Styles */
-.tagline {
-  font-size: 40px;
+.tagline-sea {
+  font-size: 30px;
   font-weight: bold;
-  padding: 10px;
 }
 
 .tagline-import {
-  font-size: 40px; /* Slightly larger font size */
+  font-size: 40px;
+  /* Slightly larger font size */
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
   padding-bottom: 5px;
-  border-bottom: 2px solid white; /* Underline below the text */
+  border-bottom: 2px solid white;
+  /* Underline below the text */
 }
 
 /* Import Section */
 .import-section {
+  background: url("../assets/bgImportSea.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
   position: relative;
-  margin-top: 50px;
 }
 
-.bg-sea-truck {
-  width: 100%;
-  height: 450px; /* Adjusted for desktop display */
-  object-fit: cover;
+.import-section h2 {
+  margin-top: 35px;
+}
+
+.bg-sea {
+  height: 450px;
+  /* Adjusted for desktop display */
 }
 
 .center-import-content-sea {
-  top: 45%; /* Center text vertically */
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center text horizontally and vertically */
+  transform: translate(-50%, -50%);
 }
 
 /* Import Image */
 .import-image-sea {
-  width: 70%; /* Increased size */
-  height: auto; /* Maintain aspect ratio */
-  margin: 50px auto 0; /* Adjust margin for better alignment */
-  display: block;
-  border: none; /* No border */
+  width: 1200px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  z-index: 20;
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
+
+.import-image-sea:hover {
+  transform: translateY(-10px) scale(1.25);
+}
+
 
 /* Details Section Styles */
-.details-section {
-  padding: 50px 20px;
+.details-section-sea {
   background: white;
   text-align: center;
+  padding: 1% 9%;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
 }
 
-.details-section p {
-  max-width: 800px;
-  margin: 0 auto 40px;
+.details-section-sea p {
+  max-width: 1000px;
+  text-align: center;
   line-height: 1.6;
+  margin: 0 auto;
+  padding-bottom: 25px;
+
 }
 
 /* Freight Types Section */
@@ -97,7 +113,7 @@
   display: flex;
   justify-content: center;
   gap: 30px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -106,18 +122,27 @@
   flex: 1;
   max-width: 500px;
   padding: 20px;
-  background: #f5f5f5;
+  background: #AEC7DF;
   border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.freight-type:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(75, 119, 160, 0.397);
 }
 
 .freight-type h3 {
-  color: #333;
+  color: black;
+  font-weight: bold;
   margin-bottom: 15px;
   font-size: 20px;
 }
 
 .freight-type p {
-  color: #666;
+  color: black;
+  font-weight: lighter;
   line-height: 1.5;
 }
 
@@ -137,11 +162,13 @@
   }
 
   .tagline-import {
-    font-size: 32px; /* Adjust size for smaller screens */
+    font-size: 32px;
+    /* Adjust size for smaller screens */
   }
 
   .import-image {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%;
+    /* Full width on smaller screens */
     margin: 20px 0 0;
   }
 }

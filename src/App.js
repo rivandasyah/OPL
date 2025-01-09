@@ -5,9 +5,9 @@ import Home from "./components/Home";
 import TentangKami from "./components/TentangKami.js";
 import Footer from "./components/Footer";
 import React from "react";
-import AirFreight from "./pages/AirFreight";
-import SeaFreight from "./pages/SeaFreight";
-import CstClear from "./pages/CstClear";
+import AirFreight from "./components/AirFreight";
+import SeaFreight from "./components/SeaFreight";
+import CstClear from "./components/CstClear";
 
 function App() {
   return (
