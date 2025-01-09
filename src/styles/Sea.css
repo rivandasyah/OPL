@@ -11,18 +11,22 @@
   object-fit: cover;
 }
 
+.bg-sea-truck{
+  height: 450px;
+}
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 98.5%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.overlay-content {
+.overlay-content-sea {
   position: absolute;
-  top: 50%;
+
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -35,7 +39,7 @@
 .tagline {
   font-size: 40px;
   font-weight: bold;
-  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .tagline-import {
@@ -60,17 +64,17 @@
   object-fit: cover;
 }
 
-.center-import-content {
-  top: 50%; /* Center text vertically */
+.center-import-content-sea {
+  top: 45%; /* Center text vertically */
   left: 50%;
   transform: translate(-50%, -50%); /* Center text horizontally and vertically */
 }
 
 /* Import Image */
-.import-image {
-  width: 85%; /* Increased size */
+.import-image-sea {
+  width: 70%; /* Increased size */
   height: auto; /* Maintain aspect ratio */
-  margin: 30px auto 0; /* Adjust margin for better alignment */
+  margin: 50px auto 0; /* Adjust margin for better alignment */
   display: block;
   border: none; /* No border */
 }

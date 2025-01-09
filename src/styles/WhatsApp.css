@@ -1,0 +1,28 @@
+.whatsapp-floating-button {
+    position: fixed;
+    bottom: 40px;
+    /* Naikkan ke atas */
+    right: 40px;
+    /* Geser ke kiri */
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    /* Gradasi warna hijau WhatsApp */
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-floating-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-floating-button svg {
+    fill: white;
+}

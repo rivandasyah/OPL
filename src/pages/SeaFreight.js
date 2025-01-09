@@ -3,6 +3,7 @@ import Sea from "../assets/bgSea.jpg";
 import Truk from "../assets/bgSeaTruck.jpg";
 import ImporSea from "../assets/importSea.png";
 import "../styles/Sea.css";
+import WhatsApp from "../components/WhatsApp";
 
 function SeaFreight() {
   return (
@@ -48,15 +49,17 @@ function SeaFreight() {
       <div className="import-section">
         <div className="image-container">
           {/* Background: bgSeaTruck */}
-          <img src={Truk} alt="Background Truck" className="image bg-sea-truck" />
+          <img src={Truk} alt="Background Truck" className="image-sea bg-sea-truck" />
           <div className="overlay"></div>
           {/* Tagline on bgSeaTruck */}
-          <div className="overlay-content center-import-content">
+          <div className="overlay-content-sea center-import-content-sea">
             <p className="tagline tagline-import">PROSES IMPORT</p>
-            <img src={ImporSea} alt="Proses Pengiriman via Laut" className="import-image" />
+            <img src={ImporSea} alt="Proses Pengiriman via Laut" className="import-image-sea" />
           </div>
         </div>
       </div>
+
+      <WhatsApp/>
     </div>
   );
 }

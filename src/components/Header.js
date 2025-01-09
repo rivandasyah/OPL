@@ -69,6 +69,7 @@ function Header() {
             <ul
               className="dropdown-menu"
               style={{
+                display: "block",
                 visibility: isOpen ? "visible" : "hidden",
                 opacity: isOpen ? 1 : 0,
                 transition:

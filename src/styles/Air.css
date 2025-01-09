@@ -1,23 +1,31 @@
 /* Hero Section */
-.image-container {
+.image-container-air {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.image {
+.image-air {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.bg-air-log {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
+.bg-air {
+  height: 450px;
 }
 
-.overlay {
+.overlay-air {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 98.5%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Overlay gelap untuk kontras */
+}
+
+.overlay-air-bot {
   position: absolute;
   top: 0;
   left: 0;
@@ -63,16 +71,43 @@
 }
 
 /* Details Section */
-.details-section {
-  padding: 40px 20px;
+.details-section-air {
+  padding: 1% 9%;
   background-color: white;
   text-align: center;
 }
 
 .details-section p {
   max-width: 800px;
-  margin: 0 auto;
   line-height: 1.6;
+}
+
+.process-flow-section {
+  background: url("../assets/bgAirlog.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+.process-flow-image {
+  height: 550px;
+  z-index: 20;
+}
+
+.process-flow-section h2 {
+  margin-top: 35px;
+}
+
+.process-content{
+  z-index: 20;
+}
+
+.tagline-import{
+  z-index: 20;
 }
 
 /* Responsif */

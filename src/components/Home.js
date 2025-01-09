@@ -8,16 +8,16 @@ import ImportExport from "../assets/bgImportExport.png";
 import "../styles/Home.css";
 import { FaInfoCircle } from "react-icons/fa";
 import HitungBiaya from "./HitungBiaya.js";
+import WhatsApp from "./WhatsApp.js";
 
 function Home() {
-
   return (
     <div>
       <div className="image-container-home">
-        <img src={Latar} alt="Background" className="image-home" />
+        <img src={Latar} alt="Background" className="image-home" loading="lazy" />
         <div className="overlay"></div>
         <div className="overlay-content">
-          <img src={Logo} alt="Oscar Project Logistics Logo" className="logo" />
+          <img src={Logo} alt="Oscar Project Logistics Logo" className="logo" loading="lazy"/>
           <p className="tagline">International Freight Forwarding</p>
         </div>
       </div>
@@ -29,16 +29,16 @@ function Home() {
         </p>
         <div className="services">
           <div className="service">
-            <img src={SeaFreight} alt="Sea Freight" className="service-image" />
+            <img src={SeaFreight} alt="Sea Freight" className="service-image" loading="lazy"/>
             <h3 className="service-title">Sea Freight</h3>
-            <a className="service-link" href="/layanan-sea-freight">
+            <a className="service-link" href="/layanan-sea">
               Lihat Selengkapnya
             </a>
           </div>
           <div className="service">
-            <img src={AirFreight} alt="Air Freight" className="service-image" />
+            <img src={AirFreight} alt="Air Freight" className="service-image" loading="lazy"/>
             <h3 className="service-title">Air Freight</h3>
-            <a className="service-link" href="/layanan-air-freight">
+            <a className="service-link" href="/layanan-air">
               Lihat Selengkapnya
             </a>
           </div>
@@ -47,9 +47,10 @@ function Home() {
               src={CustomsClearance}
               alt="Customs Clearance"
               className="service-image"
+              loading="lazy"
             />
             <h3 className="service-title">Customs Clearance</h3>
-            <a className="service-link" href="/layanan-customs-clearance">
+            <a className="service-link" href="/layanan-customs">
               Lihat Selengkapnya
             </a>
           </div>
@@ -115,15 +116,18 @@ function Home() {
           <img
             src={ImportExport}
             alt="Import and Export"
+            loading="lazy"
             className="import-export-image"
           />
         </section>
 
         <section className="calculate-section" id="hitung-biaya-section">
           <h2 style={{ color: "white" }}>Hitung Biaya Import</h2>
-          <HitungBiaya/>
+          <HitungBiaya />
         </section>
       </div>
+
+      <WhatsApp />
     </div>
   );
 }
