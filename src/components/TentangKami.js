@@ -3,6 +3,7 @@ import "../styles/TentangKami.css";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import HubungiKami from "../assets/bgHubungiKami.jpg";
 import TentangPerusahaan from "../assets/bgTentangPerusahaan.jpg";
+import WhatsApp from "./WhatsApp";
 
 function TentangKami() {
   return (
@@ -13,7 +14,7 @@ function TentangKami() {
           alt="Background Hubungi Kami"
           className="image-tentang"
         />
-        <div className="overlay"></div>
+        <div className="overlay-kami"></div>
         <div className="overlay-content">
           <h2>Hubungi Kami</h2>
         </div>
@@ -37,7 +38,12 @@ function TentangKami() {
               Freight, Air Freight, Import Door to Door dan Domestik.
             </p>
             <div className="profile-contact">
-              <div className="button-icon">
+              <a
+                href="mailto:info.oscarlogistics@gmail.com"
+                className="button-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="contact-icons message-icon">
                   <FaEnvelope />
                 </div>
@@ -45,8 +51,9 @@ function TentangKami() {
                   <h1>Kirimkan Pesan</h1>
                   <span>OPL_Indonesia</span>
                 </div>
-              </div>
-              <div className="button-icon">
+              </a>
+
+              <a href="tel:+6281234515052" className="button-icon">
                 <div className="contact-icons call-icon">
                   <FaPhoneAlt />
                 </div>
@@ -54,11 +61,12 @@ function TentangKami() {
                   <h1>Hubungi Kami</h1>
                   <span>+62 812 3451 5052</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
+      <WhatsApp />
     </div>
   );
 }
