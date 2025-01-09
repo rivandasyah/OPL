@@ -35,7 +35,7 @@
   /* Overlay gelap untuk kontras */
 }
 
-.overlay-content {
+.overlay-content-air {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -44,7 +44,7 @@
   color: white;
 }
 
-.tagline {
+.tagline-air {
   font-size: 30px;
   font-weight: bold;
 }
@@ -75,6 +75,7 @@
   padding: 1% 9%;
   background-color: white;
   text-align: center;
+  padding-bottom: 15px;
 }
 
 .details-section p {
@@ -83,7 +84,7 @@
 }
 
 .process-flow-section {
-  background: url("../assets/bgAirlog.jpg") no-repeat center center;
+  background: url("../assets/bgImportAir.jpg") no-repeat center center;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -94,19 +95,25 @@
 }
 
 .process-flow-image {
-  height: 550px;
+  height: 650px;
   z-index: 20;
+  padding-bottom: 30px;
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
+}
+
+.process-flow-image:hover {
+  transform: translateY(-10px) scale(1.25);
 }
 
 .process-flow-section h2 {
   margin-top: 35px;
 }
 
-.process-content{
+.process-content {
   z-index: 20;
 }
 
-.tagline-import{
+.tagline-import {
   z-index: 20;
 }
 
