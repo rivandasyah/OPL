@@ -42,6 +42,7 @@
 
 .bg-clear {
   height: 500px; /* Adjusted height for bgClear */
+  width: 100%;
   object-fit: cover;
 }
 
@@ -64,18 +65,7 @@
   left: 0;
   width: 100%;
   height: 98.5%;
-  background-color: rgba(0, 0, 0, 0.6);
-  /* Overlay gelap untuk kontras */
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  /* Overlay gelap untuk kontras */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .overlay-content {
@@ -84,8 +74,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
   color: white;
+  z-index: 1;
 }
+
 /* Deal Image (bgDeal) Styling */
 .deal-image-wrapper {
   flex: 1;
