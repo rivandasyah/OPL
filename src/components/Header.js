@@ -14,15 +14,17 @@ function Header() {
 
   const handleHitungBiayaClick = () => {
     if (location.pathname !== "/") {
-      navigate("/");
+      navigate("/", { state: { scrollTo: "hitung-biaya-section", delay: true } });
+    } else {
+      setTimeout(() => {
+        const formSection = document.getElementById("hitung-biaya-section");
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500); 
     }
-    setTimeout(() => {
-      const formSection = document.getElementById("hitung-biaya-section");
-      if (formSection) {
-        formSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
   };
+  
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);

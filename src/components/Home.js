@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Latar from "../assets/bgBeranda.jpg";
 import Logo from "../assets/logoPutih.png";
 import SeaFreight from "../assets/bgSeaFreight.jpg";
@@ -11,6 +12,25 @@ import HitungBiaya from "./HitungBiaya.js";
 import WhatsApp from "./WhatsApp.js";
 
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "hitung-biaya-section") {
+      const scrollToSection = () => {
+        const formSection = document.getElementById("hitung-biaya-section");
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: "smooth" });
+        }
+      };
+
+      if (location.state.delay) {
+        setTimeout(scrollToSection, 300); 
+      } else {
+        scrollToSection();
+      }
+    }
+  }, [location]);
+   
   return (
     <div>
       <div className="image-container-home">
