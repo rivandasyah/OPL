@@ -35,7 +35,7 @@ function Home() {
     <div>
       <div className="image-container-home">
         <img src={Latar} alt="Background" className="image-home" loading="lazy" />
-        <div className="overlay"></div>
+        <div className="overlay-home"></div>
         <div className="overlay-content">
           <img src={Logo} alt="Oscar Project Logistics Logo" className="logo" loading="lazy"/>
           <p className="tagline">International Freight Forwarding</p>

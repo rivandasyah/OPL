@@ -47,7 +47,7 @@
     content: ""; 
     position: absolute;
     bottom: -5px; 
-    left: 360px;
+    left: 375px;
     width: 550px; 
     height: 1px; 
     background-color: white;
@@ -56,7 +56,7 @@
 .profil-perusahaan-section {
     background-color: #002050;
     color: white;
-    padding: 3rem 3rem;
+    padding: 1rem 0 3rem 0;
     display: flex;
     justify-content: center;
 }
