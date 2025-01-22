@@ -16,7 +16,7 @@ function TentangKami() {
         />
         <div className="overlay-kami"></div>
         <div className="overlay-content">
-          <h2>Hubungi Kami</h2>
+          <h2 className="tagline-kami">Hubungi Kami</h2>
         </div>
       </div>
       <div className="profil-perusahaan-section">

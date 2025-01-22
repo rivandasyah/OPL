@@ -45,7 +45,7 @@
 }
 
 .tagline-air {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -75,6 +75,7 @@
   padding: 1% 9%;
   background-color: white;
   text-align: center;
+  font-size: 18px;
   padding-bottom: 15px;
 }
 
