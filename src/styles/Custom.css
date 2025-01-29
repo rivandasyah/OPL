@@ -148,41 +148,91 @@
   /* Darker red on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .bg-clear-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-    /* Reduce space between elements */
+    display: flex; /* Pastikan flex diaktifkan */
+    flex-direction: column; /* Ubah tata letak menjadi vertikal */
+    justify-content: flex-start; /* Posisi elemen dimulai dari atas */
+    align-items: center; /* Pusatkan elemen secara horizontal */
+    gap: 20px; /* Tambahkan jarak antar elemen */
+    padding: 15px; /* Tambahkan ruang di sekitar elemen */
+    text-align: center; /* Pastikan konten teks berada di tengah */
+    width: 100%; /* Pastikan elemen fleksibel penuh */
   }
 
   .deal-image-wrapper {
-    max-width: 250px;
-    /* Reduce bgDeal size for smaller screens */
-    margin-left: 0;
-    /* Remove left margin on small screens */
+    width: 100%; /* Gambar memenuhi lebar penuh */
+    max-width: 100%; /* Hindari gambar terlalu besar */
+    margin: 0; /* Hilangkan margin di sekitar gambar */
+  }
+
+  .bg-deal {
+    width: 100%; /* Gambar memenuhi lebar penuh */
+    height: auto; /* Pertahankan proporsi gambar */
+    object-fit: cover; /* Hindari distorsi gambar */
+    margin-bottom: 15px; /* Berikan jarak di bawah gambar */
   }
 
   .text-content {
-    font-size: 14px;
-    /* Adjust font size for smaller screens */
-    text-align: center;
-    margin-right: 0;
-    /* Remove right margin */
+    font-size: 14px; /* Ukuran font lebih kecil */
+    line-height: 1.6; /* Jarak antar baris */
+    padding: 0 15px; /* Tambahkan padding kiri dan kanan */
+    max-width: 100%; /* Pastikan teks memenuhi lebar penuh container */
+    text-align: justify; /* Justifikasi teks */
+  }
+
+  .text-content p {
+    margin-bottom: 15px; /* Jarak bawah antar paragraf */
   }
 
   .button-wrapper {
-    text-align: center;
-    /* Center the button */
-    margin-top: 15px;
-    /* Reduce spacing */
+    text-align: center; /* Pusatkan tombol */
+    margin-top: 15px; /* Tambahkan jarak atas untuk tombol */
   }
 
   .contact-button {
-    font-size: 14px;
-    /* Smaller button text */
-    padding: 6px 12px;
-    /* Adjust padding for smaller screens */
+    font-size: 12px; /* Ukuran font tombol lebih kecil */
+    padding: 8px 16px; /* Sesuaikan padding tombol */
+    border-radius: 4px; /* Border radius tombol */
+  }
+}
+
+/* Untuk tampilan tablet (lebar maksimum 800px) */
+@media (max-width: 800px) {
+  .bg-clear-content {
+    flex-direction: row; /* Tata letak horisontal */
+    justify-content: space-between; /* Ruang antara gambar dan teks */
+    align-items: center; /* Posisikan elemen di tengah secara vertikal */
+    gap: 20px; /* Jarak antar elemen */
+    padding: 20px; /* Tambahkan padding */
+  }
+
+  .deal-image-wrapper {
+    flex: 1;
+    max-width: 300px; /* Lebar gambar diatur agar tidak terlalu besar */
+  }
+
+  .bg-deal {
+    width: 100%; /* Gambar memenuhi lebar container */
+    height: auto; /* Jaga proporsi gambar */
+    object-fit: contain; /* Menjaga proporsi gambar */
+  }
+
+  .text-content {
+    flex: 2; /* Memberikan lebih banyak ruang untuk teks */
+    font-size: 14px; /* Ukuran font lebih kecil untuk responsif */
+    text-align: left; /* Teks rata kiri */
+    padding: 0 20px; /* Tambahkan padding pada teks */
+    max-width: calc(100% - 320px); /* Sesuaikan lebar teks untuk menghindari overflow */
+  }
+
+  .text-content p {
+    margin-bottom: 20px; /* Spasi antar paragraf */
+    text-align: justify; /* Justifikasi teks */
+  }
+
+  .contact-button {
+    font-size: 16px; /* Ukuran tombol sedang */
+    padding: 8px 16px; /* Padding tombol */
   }
 }

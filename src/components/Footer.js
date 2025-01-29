@@ -5,6 +5,9 @@ import "../styles/Footer.css";
 import Logo from "../assets/logoBerwarna.png";
 
 function Footer() {
+  const address = `Jalan raya ciangsana raya No.178,
+Kec. gunung putri, Bogor, Indonesia, 16968`;
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -51,23 +54,19 @@ function Footer() {
           <div className="contact-info">
             <div className="contact-item">
               <MdPhone className="contact-icon" />
-              <span>
-                +6281234515052
-              </span>
+              <span>+6281234515052</span>
             </div>
             <div className="contact-item">
               <MdEmail className="contact-icon" />
-              <span>
-                info.oscarlogistics@gmail.com
-              </span>
+              <span>info.oscarlogistics@gmail.com</span>
             </div>
             <div className="contact-item">
               <MdLocationOn className="contact-icon" />
-              <span>
-                Jalan raya ciangsana raya No.178,
-                <br />
-                Kec. gunung putri, Bogor, Indonesia, 16968
-              </span>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: address.replace(/\n/g, "<br />"),
+                }}
+              />
             </div>
           </div>
         </div>
