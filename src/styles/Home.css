@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* Mengatur box-sizing global */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Menghilangkan scroll horizontal */
+}
+
 .image-container-home {
     position: relative;
     width: 100%;
@@ -13,7 +25,6 @@
     height: 100%;
     object-fit: cover;
     animation: fadeIn 1s ease-out;
-
 }
 
 .overlay-home {
@@ -51,6 +62,8 @@
     text-align: center;
     padding: 50px 20px;
     background-color: white;
+    width: 100%;
+    box-sizing: border-box; /* Menjamin kontainer tidak meluap */
 }
 
 .services-title {
@@ -69,6 +82,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    padding-bottom: 20px;
     flex-wrap: wrap;
 }
 
@@ -123,6 +137,10 @@
     background-size: cover;
     color: white;
     font-family: 'Poppins';
+    width: 100%;
+    overflow-x: hidden; /* Menghilangkan scroll horizontal */
+    padding: 0;
+    margin: 0;
 }
 
 .section {
@@ -160,7 +178,6 @@
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 
 .card-content {
     display: flex;
@@ -254,7 +271,7 @@
 
 .form-group .error-message {
     color: red;
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
 }
 
@@ -399,5 +416,75 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+/* Pengaturan umum yang berlaku untuk seluruh halaman */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Menjamin box model konsisten di semua elemen */
+}
+
+/* Pengaturan untuk .home-container dan elemen lainnya */
+.home-container {
+    width: 100%;
+    max-width: 100%; /* Membatasi lebar agar tidak melampaui viewport */
+    overflow-x: hidden; /* Menghindari scroll horizontal */
+    padding: 0;
+    margin: 0;
+}
+
+/* Mengatur overlay agar tetap berada dalam batas */
+.overlay-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.46);
+    z-index: 1;
+    box-sizing: border-box; /* Pastikan overlay tidak melampaui batas */
+}
+
+/* Pengaturan khusus untuk tampilan layar lebih kecil dari 800px */
+@media (max-width: 800px) {
+    /* Menyesuaikan ukuran logo */
+    .logo {
+        width: 350px;
+    }
+
+    /* Mengatur ukuran font tagline */
+    .tagline {
+        font-size: 30px;
+    }
+
+    /* Pastikan overlay tetap di dalam viewport */
+    .overlay-home {
+        width: 100%;
+    }
+
+    /* Menyesuaikan tampilan home-container dan services-container */
+    .home-container,
+    .services-container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Mengubah grid layout pada form */
+    .calculate-form {
+        grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
+    }
+}
+
+/* Pengaturan khusus untuk tampilan layar lebih kecil dari 480px */
+@media (max-width: 480px) {
+    .tagline {
+        font-size: 25px; /* Mengurangi ukuran font tagline */
+    }
+
+    .logo {
+        width: 400px; /* Menyesuaikan ukuran logo pada layar lebih kecil */
     }
 }

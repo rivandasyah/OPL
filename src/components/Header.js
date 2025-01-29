@@ -3,28 +3,31 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import logo from "../assets/logoPutih.png";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
 
   const handleHitungBiayaClick = () => {
     if (location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: "hitung-biaya-section", delay: true } });
+      navigate("/", {
+        state: { scrollTo: "hitung-biaya-section", delay: true },
+      });
     } else {
       setTimeout(() => {
         const formSection = document.getElementById("hitung-biaya-section");
         if (formSection) {
           formSection.scrollIntoView({ behavior: "smooth" });
         }
-      }, 500); 
+      }, 500);
     }
+    setIsMobileMenuOpen(false);
   };
-  
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
@@ -36,20 +39,27 @@ function Header() {
     timeoutRef.current = setTimeout(() => setIsOpen(false), 100);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const isActive = (path) => location.pathname === path;
 
   return (
     <header className="header">
-      <div className="logo">
+      <div className="logo-header">
         <img src={logo} alt="Logo" />
       </div>
-      <nav className="nav-links">
+
+      <button className="hamburger-menu" onClick={toggleMobileMenu}>
+        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+      <nav
+        className={`nav-links ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}
+      >
         <ul>
           <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
+            <NavLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
               Beranda
             </NavLink>
           </li>
@@ -59,11 +69,6 @@ function Header() {
             onMouseLeave={handleMouseLeave}
           >
             <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                cursor: "pointer",
-              }}
             >
               <span>Layanan</span>
               <FaChevronDown style={{ marginLeft: "5px" }} />
@@ -74,6 +79,7 @@ function Header() {
                 display: "block",
                 visibility: isOpen ? "visible" : "hidden",
                 opacity: isOpen ? 1 : 0,
+                justifyContent: "center",
                 transition:
                   "visibility 0s linear 0.2s, opacity 0.2s ease-in-out",
               }}
@@ -81,7 +87,7 @@ function Header() {
               <li>
                 <Link
                   to="/layanan-air"
-                  className={isActive("/layanan-air") ? "active" : ""}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Air Freight Service
                 </Link>
@@ -89,7 +95,7 @@ function Header() {
               <li>
                 <Link
                   to="/layanan-sea"
-                  className={isActive("/layanan-sea") ? "active" : ""}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Sea Freight Service
                 </Link>
@@ -97,7 +103,7 @@ function Header() {
               <li>
                 <Link
                   to="/layanan-customs"
-                  className={isActive("/layanan-customs") ? "active" : ""}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Customs Clearance
                 </Link>
@@ -107,18 +113,17 @@ function Header() {
           <li>
             <NavLink
               to="/tentang-kami"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Tentang Kami
             </NavLink>
           </li>
-          <li>
-            <button className="button" onClick={handleHitungBiayaClick}>
-              Hitung Biaya
-            </button>
-          </li>
         </ul>
       </nav>
+
+      <button className="button" onClick={handleHitungBiayaClick}>
+        Hitung Biaya
+      </button>
     </header>
   );
 }
