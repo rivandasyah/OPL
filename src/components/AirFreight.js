@@ -3,8 +3,11 @@ import Plane from "../assets/bgAirFreight.jpg";
 import ImportProcessFlow from "../assets/importAir.png";
 import "../styles/Air.css";
 import WhatsApp from "./WhatsApp";
+import { useLanguage } from "./LanguageContext";
 
 function AirFreight() {
+  const { translations } = useLanguage();
+
   return (
     <div className="air-freight-container">
       <div className="image-container-air">
@@ -21,16 +24,12 @@ function AirFreight() {
 
       <section className="details-section-air">
         <p>
-          Air Freight Service adalah solusi yang sangat baik untuk pengiriman
-          barang yang memerlukan kecepatan, keamanan, dan jangkauan yang luas
-          dengan memanfaatkan pesawat terbang sebagai alat transportasi utama.
-          Waktu pengiriman jauh lebih singkat dibandingkan dengan pengiriman
-          laut atau darat, terutama untuk jarak jauh.
+          {translations.airFreightDesc}
         </p>
       </section>
 
       <div className="process-flow-section">
-        <h2 className="tagline tagline-import">Proses Import</h2>
+        <h2 className="tagline tagline-import">{translations.importProcess}</h2>
         <div className="process-content">
           <img
             src={ImportProcessFlow}

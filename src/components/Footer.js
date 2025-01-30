@@ -3,10 +3,13 @@ import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import "../styles/Footer.css";
 import Logo from "../assets/logoBerwarna.png";
+import { useLanguage } from "./LanguageContext";
 
 function Footer() {
   const address = `Jalan raya ciangsana raya No.178,
 Kec. gunung putri, Bogor, Indonesia, 16968`;
+
+  const { translations } = useLanguage();
 
   return (
     <footer className="footer">
@@ -18,9 +21,9 @@ Kec. gunung putri, Bogor, Indonesia, 16968`;
             className="footer-logo"
           />
           <p>
-            Selamat Datang di <b>Oscar Project Logistics</b>, Kami berkomitmen
-            untuk memberikan solusi logistik terbaik kepada Anda, dengan
-            pelayanan yang sepenuh hati.
+            {translations.footerDesc[0]}
+            <b>{translations.footerDesc[1]}</b>
+            {translations.footerDesc[2]}
           </p>
           <div className="social-icons">
             <a
@@ -50,15 +53,15 @@ Kec. gunung putri, Bogor, Indonesia, 16968`;
           </div>
         </div>
         <div className="footer-right">
-          <h2>Hubungi Kami</h2>
+          <h2>{translations.contactUs}</h2>
           <div className="contact-info">
             <div className="contact-item">
               <MdPhone className="contact-icon" />
-              <span>+6281234515052</span>
+              <span>{translations.footerPhone}</span>
             </div>
             <div className="contact-item">
               <MdEmail className="contact-icon" />
-              <span>info.oscarlogistics@gmail.com</span>
+              <span>{translations.footerEmail}</span>
             </div>
             <div className="contact-item">
               <MdLocationOn className="contact-icon" />

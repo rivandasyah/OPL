@@ -4,8 +4,11 @@ import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import HubungiKami from "../assets/bgHubungiKami.jpg";
 import TentangPerusahaan from "../assets/bgTentangPerusahaan.jpg";
 import WhatsApp from "./WhatsApp";
+import { useLanguage } from "./LanguageContext";
 
 function TentangKami() {
+  const { translations } = useLanguage();
+
   return (
     <div>
       <div className="image-container-tentang">
@@ -16,7 +19,7 @@ function TentangKami() {
         />
         <div className="overlay-kami"></div>
         <div className="overlay-content">
-          <h2 className="tagline-kami">Hubungi Kami</h2>
+          <h2 className="tagline-kami">{translations.contactUs}</h2>
         </div>
       </div>
       <div className="profil-perusahaan-section">
@@ -29,14 +32,9 @@ function TentangKami() {
             />
           </div>
           <div className="profil-text">
-            <h2>Profil Perusahaan</h2>
+            <h2>{translations.aboutUsCompanyProfile}</h2>
             <p>
-              OPL Indonesia adalah perusahaan jasa logistik yang telah
-              berpengalaman sejak tahun 2016. Dengan komitmen untuk memberikan
-              solusi logistik yang efisien dan terpercaya. Dengan menyediakan
-              layanan Jasa Handling Import, Sewa Undername Export-Import, Sea
-              Freight, Air Freight, Import Door to Door dan Domestik.
-            </p>
+              {translations.aboutUsCompanyProfileDesc}</p>
             <div className="profile-contact">
               <a
                 href="mailto:info.oscarlogistics@gmail.com"
@@ -48,8 +46,8 @@ function TentangKami() {
                   <FaEnvelope />
                 </div>
                 <div className="button-text">
-                  <h1>Kirimkan Pesan</h1>
-                  <span>OPL_Indonesia</span>
+                  <h1>{translations.aboutUsSendEmail}</h1>
+                  <span>{translations.aboutUsEmail}</span>
                 </div>
               </a>
 
@@ -58,7 +56,7 @@ function TentangKami() {
                   <FaPhoneAlt />
                 </div>
                 <div className="button-text">
-                  <h1>Hubungi Kami</h1>
+                  <h1>{translations.contactUs}</h1>
                   <span>+62 812 3451 5052</span>
                 </div>
               </a>

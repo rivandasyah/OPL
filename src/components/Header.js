@@ -1,17 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import logo from "../assets/logoPutih.png";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
+import { useLanguage } from "./LanguageContext.js";
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { language, toggleLanguage, translations } = useLanguage();
 
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
+  const menuRef = useRef(null);
 
   const handleHitungBiayaClick = () => {
     if (location.pathname !== "/") {
@@ -43,7 +46,27 @@ function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const isActive = (path) => location.pathname === path;
+  const handleLanguageChange = () => {
+    toggleLanguage();
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    }
+
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="header">
@@ -55,12 +78,13 @@ function Header() {
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
       </button>
       <nav
+        ref={menuRef}
         className={`nav-links ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}
       >
         <ul>
           <li>
             <NavLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
-              Beranda
+              {translations.home}
             </NavLink>
           </li>
           <li
@@ -68,9 +92,8 @@ function Header() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <div
-            >
-              <span>Layanan</span>
+            <div>
+              <span> {translations.service}</span>
               <FaChevronDown style={{ marginLeft: "5px" }} />
             </div>
             <ul
@@ -89,7 +112,7 @@ function Header() {
                   to="/layanan-air"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Air Freight Service
+                  {translations.airFreightService}
                 </Link>
               </li>
               <li>
@@ -97,7 +120,7 @@ function Header() {
                   to="/layanan-sea"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Sea Freight Service
+                  {translations.seaFreightService}
                 </Link>
               </li>
               <li>
@@ -105,7 +128,7 @@ function Header() {
                   to="/layanan-customs"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Customs Clearance
+                  {translations.customsClearance}
                 </Link>
               </li>
             </ul>
@@ -115,14 +138,18 @@ function Header() {
               to="/tentang-kami"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Tentang Kami
+              {translations.aboutUs}
             </NavLink>
           </li>
         </ul>
       </nav>
 
+      <button className="language-toggle" onClick={handleLanguageChange}>
+        {language === "id" ? "ID" : "EN"}
+      </button>
+
       <button className="button" onClick={handleHitungBiayaClick}>
-        Hitung Biaya
+        {translations.calculate}
       </button>
     </header>
   );
