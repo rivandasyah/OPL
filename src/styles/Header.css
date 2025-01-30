@@ -1,7 +1,13 @@
 /* Styling logo */
-.logo img {
+.logo-header img {
     height: auto;
     width: 120px;
+    align-items: center;
+}
+
+.logo-header {
+    width: 750px;
+    height: auto;
 }
 
 /* Styling header secara keseluruhan */
@@ -15,28 +21,7 @@
     color: white;
     position: relative;
     z-index: 10;
-}
-
-/* Styling untuk elemen menu di dalam header */
-.nav-links li {
-    position: relative;
-}
-
-/* Styling link menu */
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: normal;
-    transition: color 0.3s ease;
-}
-
-/* Menandakan menu yang sedang aktif */
-.nav-links .active {
-    font-weight: bold;
-}
-
-.nav-links .button {
-    margin-left: 20px;
+    width: 100%;
 }
 
 /* Styling untuk menu navigasi utama */
@@ -47,6 +32,8 @@
     gap: 30px;
     margin: 0;
     padding: 0;
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 
 /* Dropdown Container */
@@ -66,6 +53,15 @@
     font-weight: bold;
 }
 
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
 .button.active {
     font-weight: bold;
     color: white;
@@ -73,6 +69,12 @@
 
 .dropdown {
     position: relative;
+    cursor: pointer;
+}
+
+.dropdown div {
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -86,6 +88,7 @@
     list-style: none;
     padding: 10px 0;
     margin: 0;
+    margin-top: 10px;
     border-radius: 4px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 10;
@@ -128,14 +131,11 @@
     padding: 12px 25px;
     border-radius: 20px;
     font-size: 16px;
-    text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
     border: none;
     cursor: pointer;
+    margin-left: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    line-height: 1;
-    margin-top: -5px;
 }
 
 /* Hover effect for button */
@@ -151,21 +151,94 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 800px) {
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
+    /* Sembunyikan menu biasa, aktifkan menu mobile */
+    .nav-links {
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: right;
+        padding: 20px;
+    }
+
+    /* Jika tombol hamburger diklik, menu muncul */
+    .nav-links.mobile-menu-open {
+        display: flex;
+        margin-top: 30px;
+        background: rgba(0, 0, 0, 0.12);
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
         align-items: center;
-        text-align: center;
     }
 
     .nav-links ul {
         flex-direction: column;
         gap: 15px;
+        margin-left: auto;
+    }
+
+    .nav-links li {
+        display: block;
+    }
+
+    /* Tombol hamburger */
+    .hamburger-menu {
+        order: 1;
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        padding-left: 20px;
+    }
+
+    .button {
+        margin-left: 40px;
     }
 
     .dropdown-menu {
-        position: relative;
+        display: none;
+        position: absolute;
+        right: 0;
+        left: auto;
+        background: white;
+        padding: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        min-width: 250px;
+        text-align: right;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .dropdown div {
+        justify-content: right;
+    }
+}
+
+/* Untuk layar lebih kecil (480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .hamburger-menu {
+        font-size: 24px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 8px 16px;
+        margin-left: 10px;
     }
 }
