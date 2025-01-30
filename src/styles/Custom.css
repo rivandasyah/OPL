@@ -72,7 +72,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   text-align: center;
   width: 100%;
   color: white;
@@ -102,7 +102,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-right: 30px; /* Add larger right margin */
-  max-width: calc(100% - 480px); /* Dynamically adjust width to match bgDeal */
+  /* max-width: calc(100% - 480px); Dynamically adjust width to match bgDeal */
 }
 
 .text-content p {
@@ -131,11 +131,16 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .bg-clear-content {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
-    gap: 20px; /* Reduce space between elements */
+    gap: 10px 20px; /* Reduce space between elements */
+  }
+
+  .bg-deal{  
+    width: 110%;
+    margin: 10% 25% ;
   }
 
   .deal-image-wrapper {
@@ -146,7 +151,7 @@
   .text-content {
     font-size: 14px; /* Adjust font size for smaller screens */
     text-align: center;
-    margin-right: 0; /* Remove right margin */
+    margin: 10%; /* Remove right margin */
   }
 
   .button-wrapper {
@@ -156,6 +161,49 @@
 
   .contact-button {
     font-size: 14px; /* Smaller button text */
-    padding: 6px 12px; /* Adjust padding for smaller screens */
+    padding: 10px 20px; /* Adjust padding for smaller screens */
   }
+
+}
+  /* Adjustments for Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .bg-clear-content {
+    flex-direction: column;
+    text-align: center;
+    /* gap: 10px 20px; Reduce space between elements */
+  }
+
+  img.image.bg-deal{
+    margin: 1% 1% 1% -4%;
+  }
+  .bg-deal{ 
+    height: 70%;
+    width: 110%;
+    /* margin: 5% 7% ; */
+  }
+
+  .deal-image-wrapper {
+    max-width: 250px; /* Reduce bgDeal size for smaller screens */
+    margin-left: 0; /* Remove left margin on small screens */
+  }
+
+  .div.text-content {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    margin: 12px;
+  }
+
+  .text-content{
+    margin: 1% 10%
+  }
+
+  .button-wrapper {
+    text-align: center; /* Center the button */
+    /* margin-top: 15px; Reduce spacing */
+  }
+
+  .contact-button {
+    font-size: 14px; /* Smaller button text */
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
+
 }

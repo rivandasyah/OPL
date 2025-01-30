@@ -401,3 +401,239 @@
         transform: translateY(0);
     }
 }
+
+/* Default Styles for Desktop */
+
+/* Other styles are unchanged */
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .image-container-home {
+        height: 400px;
+    }
+
+    .logo {
+        width: 450px;
+    }
+
+    .tagline {
+        font-size: 30px;
+    }
+
+    .services-title {
+        font-size: 24px;
+    }
+
+    .service-title {
+        font-size: 20px;
+    }
+
+    .service-image {
+        height: 150px;
+    }
+
+    .service-link {
+        font-size: 12px;
+    }
+
+    .service {
+        width: 250px;
+    }
+
+    .home-container {
+        background-size: cover;
+    }
+
+    .section {
+        padding: 30px 10px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .import-export-image {
+        width: 100%;
+    }
+
+    .calculate-section {
+        padding: 30px 10px;
+    }
+
+    .calculate-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group select,
+    .form-group input {
+        font-size: 14px;
+    }
+
+    .calculate-button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .image-container-home {
+        height: 300px;
+    }
+
+    .logo {
+        width: 400px;
+    }
+
+    .tagline {
+        font-size: 24px;
+    }
+
+    .services-title {
+        font-size: 20px;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    .service-title {
+        font-size: 18px;
+    }
+
+    .service-image {
+        height: 120px;
+    }
+
+    .home-container {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .service-link {
+        font-size: 12px;
+    }
+
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .calculate-section h2 {
+        font-size: 24px;
+    }
+    .service-cards{
+        margin: 0 0 0 30%;
+    }
+    .card-content h3 {
+        font-size: 16px;
+    }
+
+    .card-content p {
+        font-size: 12px;
+    }
+
+    .form-card {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group select,
+    .form-group input {
+        font-size: 14px;
+    }
+
+    .calculate-button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container-home {
+        height: 250px;
+    }
+
+    .logo {
+        width: 300px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    .services-title {
+        font-size: 18px;
+    }
+
+    .service-title {
+        font-size: 16px;
+    }
+
+    .service-image {
+        height: 100px;
+    }
+
+    .service-link {
+        font-size: 12px;
+    }
+
+    .home-container {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 0 0 3%;
+    }
+
+    .card-content h3 {
+        font-size: 14px;
+    }
+
+    .card-content p {
+        font-size: 12px;
+    }
+
+    .form-card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-group select,
+    .form-group input {
+        font-size: 12px;
+    }
+
+    .calculate-button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .price-feedback-whatsapp-button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
