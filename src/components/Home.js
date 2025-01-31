@@ -10,9 +10,11 @@ import "../styles/Home.css";
 import { FaInfoCircle } from "react-icons/fa";
 import HitungBiaya from "./HitungBiaya.js";
 import WhatsApp from "./WhatsApp.js";
+import { useLanguage } from "./LanguageContext.js";
 
 function Home() {
   const location = useLocation();
+  const { translations } = useLanguage();
 
   useEffect(() => {
     if (location.state?.scrollTo === "hitung-biaya-section") {
@@ -24,42 +26,60 @@ function Home() {
       };
 
       if (location.state.delay) {
-        setTimeout(scrollToSection, 300); 
+        setTimeout(scrollToSection, 300);
       } else {
         scrollToSection();
       }
     }
   }, [location]);
-   
+
   return (
     <div>
       <div className="image-container-home">
-        <img src={Latar} alt="Background" className="image-home" loading="lazy" />
+        <img
+          src={Latar}
+          alt="Background"
+          className="image-home"
+          loading="lazy"
+        />
         <div className="overlay-home"></div>
         <div className="overlay-content">
-          <img src={Logo} alt="Oscar Project Logistics Logo" className="logo" loading="lazy"/>
+          <img
+            src={Logo}
+            alt="Oscar Project Logistics Logo"
+            className="logo"
+            loading="lazy"
+          />
           <p className="tagline">International Freight Forwarding</p>
         </div>
       </div>
 
       <div className="services-container">
-        <h2 className="services-title">Layanan Kami</h2>
-        <p className="services-subtitle">
-          Solusi masalah pengiriman barang Anda
-        </p>
+        <h2 className="services-title">{translations.homeService}</h2>
+        <p className="services-subtitle">{translations.homeServiceDesc}</p>
         <div className="services">
           <div className="service">
-            <img src={SeaFreight} alt="Sea Freight" className="service-image" loading="lazy"/>
+            <img
+              src={SeaFreight}
+              alt="Sea Freight"
+              className="service-image"
+              loading="lazy"
+            />
             <h3 className="service-title">Sea Freight</h3>
             <a className="service-link" href="/layanan-sea">
-              Lihat Selengkapnya
+              {translations.homeSeeMore}
             </a>
           </div>
           <div className="service">
-            <img src={AirFreight} alt="Air Freight" className="service-image" loading="lazy"/>
+            <img
+              src={AirFreight}
+              alt="Air Freight"
+              className="service-image"
+              loading="lazy"
+            />
             <h3 className="service-title">Air Freight</h3>
             <a className="service-link" href="/layanan-air">
-              Lihat Selengkapnya
+              {translations.homeSeeMore}
             </a>
           </div>
           <div className="service">
@@ -71,7 +91,7 @@ function Home() {
             />
             <h3 className="service-title">Customs Clearance</h3>
             <a className="service-link" href="/layanan-customs">
-              Lihat Selengkapnya
+              {translations.homeSeeMore}
             </a>
           </div>
         </div>
@@ -79,7 +99,7 @@ function Home() {
 
       <div className="home-container">
         <section className="section service-section">
-          <h2>Kami ada untuk Anda</h2>
+          <h2>{translations.homeHelp}</h2>
           <div className="service-cards">
             <div className="card">
               <div className="card-content">
@@ -90,11 +110,8 @@ function Home() {
                     fontSize: "25px",
                   }}
                 />
-                <h3>Pelayanan Profesional</h3>
-                <p>
-                  Selalu melayani secara profesional dengan mengutamakan
-                  kenyamanan customer.
-                </p>
+                <h3>{translations.homeHelpOne}</h3>
+                <p>{translations.homeHelpOneDesc}</p>
               </div>
             </div>
             <div className="card">
@@ -106,11 +123,8 @@ function Home() {
                     fontSize: "25px",
                   }}
                 />
-                <h3>Berpengalaman</h3>
-                <p>
-                  Lebih dari 10 tahun melayani berbagai pengiriman barang Export
-                  dan Import.
-                </p>
+                <h3>{translations.homeHelpTwo}</h3>
+                <p>{translations.homeHelpTwoDesc}</p>
               </div>
             </div>
             <div className="card">
@@ -122,11 +136,8 @@ function Home() {
                     fontSize: "25px",
                   }}
                 />
-                <h3>Aman dan Cepat</h3>
-                <p>
-                  Jasa yang ditawarkan selalu tepat waktu dan sangat menjaga
-                  keamanan paket pelanggan.
-                </p>
+                <h3>{translations.homeHelpThree}</h3>
+                <p>{translations.homeHelpThreeDesc}</p>
               </div>
             </div>
           </div>
@@ -134,7 +145,7 @@ function Home() {
 
         <section className="section import-export-section">
           <img
-            src={ImportExport}
+            src={translations.imgImportExport}
             alt="Import and Export"
             loading="lazy"
             className="import-export-image"
@@ -142,7 +153,7 @@ function Home() {
         </section>
 
         <section className="calculate-section" id="hitung-biaya-section">
-          <h2 style={{ color: "white" }}>Hitung Biaya Import</h2>
+          <h2 style={{ color: "white" }}>{translations.homeCalculate}</h2>
           <HitungBiaya />
         </section>
       </div>

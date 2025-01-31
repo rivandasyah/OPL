@@ -46,6 +46,7 @@
     color: white;
     font-weight: normal;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 /* Active link styling */
@@ -136,6 +137,7 @@
     cursor: pointer;
     margin-left: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
 /* Hover effect for button */
@@ -151,38 +153,58 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+.language-toggle {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.language-toggle:hover {
+    background-color: #9b1e22;
+}
+
 @media (max-width: 800px) {
 
-    /* Sembunyikan menu biasa, aktifkan menu mobile */
     .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
         position: absolute;
-        top: 70px;
-        right: 0;
-        background: rgba(0, 0, 0, 0.9);
+        top: 100%;
+        left: 0;
         width: 100%;
+        background: rgba(0, 0, 0, 0.438);
         text-align: right;
         padding: 20px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+        /* Supaya tidak bisa diklik saat hidden */
     }
 
-    /* Jika tombol hamburger diklik, menu muncul */
     .nav-links.mobile-menu-open {
-        display: flex;
-        margin-top: 30px;
-        background: rgba(0, 0, 0, 0.12);
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     .header {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        padding: 20px 20px 20px 40px;
     }
 
     .nav-links ul {
         flex-direction: column;
         gap: 15px;
         margin-left: auto;
+        padding-left: 40px;
     }
 
     .nav-links li {
@@ -222,7 +244,6 @@
     }
 }
 
-/* Untuk layar lebih kecil (480px) */
 @media (max-width: 480px) {
     .header {
         padding: 10px 20px;

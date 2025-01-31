@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
+import { useLanguage } from "./LanguageContext";
 
 const negaraData = {
   singapore: {
@@ -24,7 +25,7 @@ const negaraData = {
   },
   shanghai: {
     udara: { price: 240000, min: 10 },
-    laut: { pirce: 9000000, min: 1 },
+    laut: { price: 9000000, min: 1 },
   },
   hongkong: {
     udara: { price: 230000, min: 10 },
@@ -81,6 +82,13 @@ const negaraData = {
 };
 
 const HitungBiaya = () => {
+
+  function formatNamaBarang(namaBarang) {
+    return namaBarang
+      .replace(/([a-z])([A-Z])/g, "$1 $2") 
+      .replace(/^./, (str) => str.toUpperCase()); 
+  }
+
   const [negara, setNegara] = useState("");
   const [via, setVia] = useState("");
   const [minimum, setMinimum] = useState("");
@@ -92,6 +100,12 @@ const HitungBiaya = () => {
     minimum: "",
   });
   const [biayaPengiriman, setBiayaPengiriman] = useState(null);
+  const { translations } = useLanguage();
+
+  const viaTranslation =
+    via === "udara"
+      ? translations.homeCalculateAir
+      : translations.homeCalculateSea;
 
   const formatRupiah = (angka) => {
     if (!angka) return "";
@@ -111,9 +125,11 @@ const HitungBiaya = () => {
       } else if (minimum < min) {
         setErrorMessages((prev) => ({
           ...prev,
-          minimum: `Minimum untuk negara ${negara.toUpperCase()} via ${via.toUpperCase()} adalah ${min} ${
-            via === "udara" ? "kg" : "m³"
-          }`,
+          minimum: `${
+            translations.homeCalculateErrorMinimum
+          } ${negara.toUpperCase()} via ${viaTranslation} ${
+            translations.homeCalculateErrorIs
+          } ${min} ${via === "udara" ? "kg" : "m³"}`,
         }));
       }
     }
@@ -126,24 +142,27 @@ const HitungBiaya = () => {
     let newErrorMessages = { negara: "", via: "", minimum: "" };
 
     if (!negara) {
-      newErrorMessages.negara = "Negara harus dipilih";
+      newErrorMessages.negara = translations.homeCalculateMustChooseCountry;
       isValid = false;
     }
     if (!via) {
-      newErrorMessages.via = "Via harus dipilih";
+      newErrorMessages.via = translations.homeCalculateMustChooseVia;
       isValid = false;
     }
     if (!minimum) {
-      newErrorMessages.minimum = "Minimum harus diisi";
+      newErrorMessages.minimum = translations.homeCalculateMustChooseMinimum;
       isValid = false;
     } else if (Number(minimum) < negaraData[negara][via].min) {
-      newErrorMessages.minimum = `Minimum untuk negara ${negara.toUpperCase()} via ${via.toUpperCase()} adalah ${
-        negaraData[negara][via].min
-      } ${via === "udara" ? "kg" : "m³"}`;
+      newErrorMessages.minimum = `${
+        translations.homeCalculateErrorMinimum
+      } ${negara.toUpperCase()} via ${viaTranslation} ${
+        translations.homeCalculateErrorIs
+      } ${negaraData[negara][via].min} ${via === "udara" ? "kg" : "m³"}`;
       isValid = false;
     }
     if (!namaBarang) {
-      newErrorMessages.namaBarang = "Nama barang harus dipilih";
+      newErrorMessages.namaBarang =
+        translations.homeCalculateMustChooseItemName;
       isValid = false;
     }
 
@@ -158,28 +177,29 @@ const HitungBiaya = () => {
   };
 
   const whatsappMessage = `
-Halo, saya ingin memesan jasa.
+${translations.homeCalculateWhatsappMessage}
 
-Negara: ${negara.toUpperCase()}
-Via: ${via.toUpperCase()}
-Nama barang: ${namaBarang}
-Minimum: ${minimum} ${via === "udara" ? "kg" : "m³"}
-Harga barang: ${formatRupiah(hargaBarang)}
-Total biaya: ${formatRupiah(biayaPengiriman)}
+${translations.homeCalculateCountry}: ${negara.toUpperCase()}
+${translations.homeCalculateVia}: ${translations.homeCalculateAir}
+${translations.homeCalculateItemName}: ${formatNamaBarang(namaBarang)}
+${translations.homeCalculateMinimum}: ${minimum} ${
+    via === "udara" ? "kg" : "m³"
+  }
+${translations.homeCalculateItemPriceWithout}: ${formatRupiah(hargaBarang)}
+${translations.homeCalculateTotal}: ${formatRupiah(biayaPengiriman)}
+
+${translations.homeCalculateWhatsappMessageTwo}
   `;
 
-  const whatsappLink = `https://wa.me/6283139283871?text=${encodeURIComponent(
+  const whatsappLink = `https://wa.me/6281234515052?text=${encodeURIComponent(
     whatsappMessage
   )}`;
-
-  console.log("Pesan WhatsApp:", whatsappMessage);
-  console.log("Tautan WhatsApp:", whatsappLink);
 
   return (
     <div className="form-card">
       <form className="calculate-form" onSubmit={handleCalculate}>
         <div className="form-group">
-          <label htmlFor="negara">Negara</label>
+          <label htmlFor="negara">{translations.homeCalculateCountry}</label>
           <select
             id="negara"
             value={negara}
@@ -188,11 +208,13 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
               setNegara(value);
               setErrorMessages((prev) => ({
                 ...prev,
-                negara: value ? "" : "Negara harus dipilih",
+                negara: value
+                  ? ""
+                  : translations.homeCalculateMustChooseCountry,
               }));
             }}
           >
-            <option value="">Pilih Negara</option>
+            <option value="">{translations.homeCalculateChooseCountry}</option>
             {Object.keys(negaraData).map((negaraKey) => (
               <option key={negaraKey} value={negaraKey}>
                 {negaraKey.toUpperCase()}
@@ -205,7 +227,7 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
         </div>
 
         <div className="form-group">
-          <label htmlFor="via">Via</label>
+          <label htmlFor="via">{translations.homeCalculateVia}</label>
           <select
             id="via"
             value={via}
@@ -217,26 +239,28 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
                 const min = negaraData[negara][value].min;
                 setErrorMessages((prev) => ({
                   ...prev,
-                  via: value ? "" : "Via harus dipilih",
+                  via: value ? "" : translations.homeCalculateMustChooseVia,
                   minimum:
                     minimum && minimum < min
-                      ? `Minimum untuk negara ${negara.toUpperCase()} via ${value.toUpperCase()} adalah ${min} ${
-                          value === "udara" ? "kg" : "m³"
-                        }`
+                      ? `${
+                          translations.homeCalculateErrorMinimum
+                        }${negara.toUpperCase()} via ${viaTranslation} ${
+                          translations.homeCalculateErrorIs
+                        } ${min} ${value === "udara" ? "kg" : "m³"}`
                       : "",
                 }));
               } else {
                 setErrorMessages((prev) => ({
                   ...prev,
-                  via: value ? "" : "Via harus dipilih",
+                  via: value ? "" : translations.homeCalculateMustChooseVia,
                   minimum: "",
                 }));
               }
             }}
           >
-            <option value="">Pilih Via</option>
-            <option value="udara">UDARA</option>
-            <option value="laut">LAUT</option>
+            <option value="">{translations.homeCalculateChooseVia}</option>
+            <option value="udara">{translations.homeCalculateAir}</option>
+            <option value="laut">{translations.homeCalculateSea}</option>
           </select>
           {errorMessages.via && (
             <div className="error-message">{errorMessages.via}</div>
@@ -244,7 +268,9 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
         </div>
 
         <div className="form-group">
-          <label htmlFor="namaBarang">Nama Barang</label>
+          <label htmlFor="namaBarang">
+            {translations.homeCalculateItemName}
+          </label>
           <select
             id="namaBarang"
             value={namaBarang}
@@ -252,11 +278,13 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
               setNamaBarang(e.target.value);
               setErrorMessages((prev) => ({
                 ...prev,
-                namaBarang: e.target.value ? "" : "Nama barang harus dipilih",
+                namaBarang: e.target.value
+                  ? ""
+                  : translations.homeCalculateMustChooseItemName,
               }));
             }}
           >
-            <option value="">Pilih Nama Barang</option>
+            <option value="">{translations.homeCalculateChooseItemName}</option>
             <option value="generalCargo">GENERAL CARGO</option>
             <option value="spareParts">SPARE PARTS MURNI</option>
           </select>
@@ -266,7 +294,7 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
         </div>
 
         <div className="form-group">
-          <label htmlFor="minimum">Minimum</label>
+          <label htmlFor="minimum">{translations.homeCalculateMinimum}</label>
           <input
             id="minimum"
             type="number"
@@ -282,13 +310,15 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
                   minimum:
                     value >= min
                       ? ""
-                      : `Minimum untuk negara ${negara.toUpperCase()} via ${via.toUpperCase()} adalah ${min} ${
-                          via === "udara" ? "kg" : "m³"
-                        }`,
+                      : `${
+                          translations.homeCalculateErrorMinimum
+                        } ${negara.toUpperCase()} via ${viaTranslation} ${
+                          translations.homeCalculateErrorIs
+                        } ${min} ${via === "udara" ? "kg" : "m³"}`,
                 }));
               }
             }}
-            placeholder="Masukkan minimum"
+            placeholder={translations.homeCalculateInputMinimum}
           />
           {errorMessages.minimum && (
             <div className="error-message">{errorMessages.minimum}</div>
@@ -296,18 +326,20 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
         </div>
 
         <div className="form-group">
-          <label htmlFor="hargaBarang">Harga Barang (Otomatis)</label>
+          <label htmlFor="hargaBarang">
+            {translations.homeCalculateItemPrice}
+          </label>
           <input
             id="hargaBarang"
             type="text"
             value={formatRupiah(hargaBarang)}
             readOnly
-            placeholder="Harga barang akan muncul setelah memilih negara dan via"
+            placeholder={translations.homeCalculateInputItemPrice}
           />
         </div>
 
         <button type="submit" className="calculate-button">
-          Hitung Biaya
+          {translations.calculate}
         </button>
       </form>
 
@@ -315,12 +347,14 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
         <div className="price-feedback-container">
           <div className="price-feedback-total">
             <p>
-              <strong>Total Biaya:</strong> {formatRupiah(biayaPengiriman)}
+              <strong>{translations.homeCalculateTotalPrice}</strong>{" "}
+              {formatRupiah(biayaPengiriman)}
             </p>
+            <div className="error-message">{translations.homeCalculateErrorContact}</div>
           </div>
           <div className="price-feedback-row">
             <span className="price-feedback-text">
-              Apakah harga kami sesuai dengan anda?
+              {translations.homeCalculateWhatsapp}
             </span>
             <a
               href={whatsappLink}
@@ -353,7 +387,9 @@ Total biaya: ${formatRupiah(biayaPengiriman)}
                   </g>
                 </g>
               </svg>
-              <span className="price-feedback-whatsapp-text">Call Us</span>
+              <span className="price-feedback-whatsapp-text">
+                {translations.homeCalculateCallUs}
+              </span>
             </a>
           </div>
         </div>

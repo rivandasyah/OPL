@@ -4,11 +4,13 @@ import Clear from "../assets/bgClear.jpg";
 import Deal from "../assets/bgCustomsClearance.jpg";
 import "../styles/Custom.css";
 import WhatsApp from "./WhatsApp";
+import { useLanguage } from "./LanguageContext";
 
 function CstClear() {
+  const { translations } = useLanguage();
+
   return (
     <div className="custom-clear-container">
-      {/* Hero Section */}
       <div className="hero-section">
         <div className="image-container">
           <img
@@ -25,14 +27,9 @@ function CstClear() {
 
       {/* Details Section */}
       <section className="details-section">
-        <p>
-          Custom clearance adalah serangkaian aktivitas administrasi yang
-          berhubungan dengan kepabeanan dalam proses pengiriman barang dari satu
-          negara ke negara lain.
-        </p>
+        <p>{translations.customsClearanceDesc}</p>
       </section>
 
-      {/* bgClear Section with bgDeal and Content */}
       <div className="bg-clear-container">
         <div className="image-container">
           <img src={Clear} alt="Clear Background" className="image bg-clear" />
@@ -42,17 +39,17 @@ function CstClear() {
               <img src={Deal} alt="Risk Management" className="image bg-deal" />
             </div>
             <div className="text-content">
-              <p>
-                Proses bea cukai seringkali menjadi kendala utama yang dihadapi
-                para pengirim. Perbedaan regulasi antar negara membutuhkan
-                informasi dan pengalaman yang komprehensif untuk memastikan
-                kelancaran proses pengiriman, sehingga dapat meminimalkan risiko
-                keterlambatan dan biaya tambahan.
-              </p>
+              <p>{translations.customsClearanceDescTwo}</p>
               <div className="button-wrapper">
-                <button className="contact-button large-button">
-                  HUBUNGI KAMI
-                </button>
+                <a
+                  href="mailto:info.oscarlogistics@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="contact-button large-button">
+                    {translations.contactUs}
+                  </button>
+                </a>
               </div>
             </div>
           </div>

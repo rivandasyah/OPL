@@ -17,6 +17,7 @@
 
 .no-underline {
   text-decoration: none;
+  font-size: 40px;
   /* Removes underline from the tagline */
 }
 
@@ -143,7 +144,7 @@
   cursor: pointer;
   border-radius: 4px;
   font-size: 19px;
-  /* Adjust button text size */
+  text-transform: uppercase;
 }
 
 .contact-button:hover {
@@ -178,17 +179,23 @@
     font-size: 14px; /* Ukuran font lebih kecil untuk responsif */
     text-align: left; /* Teks rata kiri */
     padding: 0 20px; /* Tambahkan padding pada teks */
-    max-width: calc(100% - 320px); /* Sesuaikan lebar teks untuk menghindari overflow */
+    max-width: calc(100% - 250px); /* Sesuaikan lebar teks untuk menghindari overflow */
   }
 
   .text-content p {
-    margin-bottom: 20px; /* Spasi antar paragraf */
-    text-align: justify; /* Justifikasi teks */
+    text-align: left; /* Justifikasi teks */
+    margin-top: 80px;
   }
 
   .contact-button {
     font-size: 16px; /* Ukuran tombol sedang */
     padding: 8px 16px; /* Padding tombol */
+  }
+
+  .details-section p {
+    font-size: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
 }
@@ -210,27 +217,38 @@
   }
 
   .deal-image-wrapper {
-    max-width: 250px; /* Reduce bgDeal size for smaller screens */
+    max-width: 200px; /* Reduce bgDeal size for smaller screens */
     margin-left: 0; /* Remove left margin on small screens */
   }
 
   .div.text-content {
     font-size: 14px; /* Adjust font size for smaller screens */
     margin: 12px;
+    font-display: justify;
   }
 
   .text-content{
-    margin: 1% 10%
+    margin: 1% 10%;
+    max-width: 400px;
+  }
+
+  .text-content p {
+    margin-top: 0;
+    text-align: center;
   }
 
   .button-wrapper {
     text-align: center; /* Center the button */
-    /* margin-top: 15px; Reduce spacing */
+    margin-top: 0;
   }
 
   .contact-button {
     font-size: 14px; /* Smaller button text */
     padding: 10px 20px; /* Adjust padding for smaller screens */
+    margin-top: 0;
   }
 
+  .no-underline {
+    font-size: 28px;
+  }
 }
