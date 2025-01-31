@@ -635,11 +635,12 @@ html, body {
     }
 
     .logo {
-        width: 300px;
+        width: 250px;
     }
 
     .tagline {
-        font-size: 18px;
+        font-size: 20px;
+        white-space: nowrap;
     }
 
     .services-title {
