@@ -108,10 +108,12 @@
 
 .process-flow-section h2 {
   margin-top: 35px;
+  font-size: 40px;
 }
 
 .process-content {
   z-index: 20;
+  text-align: center;
 }
 
 .tagline-import {
@@ -134,5 +136,27 @@
 
   .import-image {
     width: 80%;
+  }
+
+  .process-flow-image {
+    height: 450px;
+  }
+
+  .process-flow-section h2 {
+    font-size: 28px;
+  }
+
+  .details-section-air p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tagline-air {
+    font-size: 28px;
+  }
+
+  .process-flow-image {
+    height: 300px;
   }
 }

@@ -145,7 +145,7 @@ function Home() {
 
         <section className="section import-export-section">
           <img
-            src={ImportExport}
+            src={translations.imgImportExport}
             alt="Import and Export"
             loading="lazy"
             className="import-export-image"

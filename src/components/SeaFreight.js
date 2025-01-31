@@ -45,7 +45,7 @@ function SeaFreight() {
         <h2 className="tagline tagline-import">{translations.importProcess}</h2>
         <div className="process-content">
           <img
-            src={ImporSea}
+            src={translations.imgImportSea}
             alt="Proses Pengiriman via Laut"
             className="import-image-sea"
           />

@@ -61,6 +61,7 @@
 
 .import-section h2 {
   margin-top: 35px;
+  font-size: 40px;
 }
 
 .bg-sea {
@@ -76,7 +77,7 @@
 
 /* Import Image */
 .import-image-sea {
-  width: 1200px;
+  width: 1000px;
   padding-top: 30px;
   padding-bottom: 50px;
   z-index: 20;
@@ -159,6 +160,7 @@
   .freight-types {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
 
   .tagline-import {
@@ -168,7 +170,22 @@
 
   .import-image {
     width: 100%;
-    /* Full width on smaller screens */
     margin: 20px 0 0;
   }
+
+  .import-image-sea {
+    width: 90%;
+    margin: 20px 0 0;
+    justify-content: center;
+  }
+
+  .details-section-sea p {
+    font-size: 15px;
+  }
+
+  .import-section h2 {
+    font-size: 28px;
+  }
 }
+
+@media (max-width: 480px) {}

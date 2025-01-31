@@ -27,9 +27,7 @@ function CstClear() {
 
       {/* Details Section */}
       <section className="details-section">
-        <p>
-          {translations.customsClearanceDesc}
-        </p>
+        <p>{translations.customsClearanceDesc}</p>
       </section>
 
       <div className="bg-clear-container">
@@ -41,13 +39,17 @@ function CstClear() {
               <img src={Deal} alt="Risk Management" className="image bg-deal" />
             </div>
             <div className="text-content">
-              <p>
-                {translations.customsClearanceDescTwo}
-              </p>
+              <p>{translations.customsClearanceDescTwo}</p>
               <div className="button-wrapper">
-                <button className="contact-button large-button">
-                  {translations.contactUs}
-                </button>
+                <a
+                  href="mailto:info.oscarlogistics@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="contact-button large-button">
+                    {translations.contactUs}
+                  </button>
+                </a>
               </div>
             </div>
           </div>

@@ -191,7 +191,7 @@ ${translations.homeCalculateTotal}: ${formatRupiah(biayaPengiriman)}
 ${translations.homeCalculateWhatsappMessageTwo}
   `;
 
-  const whatsappLink = `https://wa.me/6283139283871?text=${encodeURIComponent(
+  const whatsappLink = `https://wa.me/6281234515052?text=${encodeURIComponent(
     whatsappMessage
   )}`;
 
@@ -350,6 +350,7 @@ ${translations.homeCalculateWhatsappMessageTwo}
               <strong>{translations.homeCalculateTotalPrice}</strong>{" "}
               {formatRupiah(biayaPengiriman)}
             </p>
+            <div className="error-message">{translations.homeCalculateErrorContact}</div>
           </div>
           <div className="price-feedback-row">
             <span className="price-feedback-text">

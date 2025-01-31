@@ -32,7 +32,7 @@ function AirFreight() {
         <h2 className="tagline tagline-import">{translations.importProcess}</h2>
         <div className="process-content">
           <img
-            src={ImportProcessFlow}
+            src={translations.imgImportAir}
             alt="Proses Import"
             className="process-flow-image"
           />

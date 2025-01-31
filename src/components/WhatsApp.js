@@ -1,9 +1,12 @@
 import React from "react";
 import "../styles/WhatsApp.css"; // Untuk styling
+import { useLanguage } from "./LanguageContext";
 
 const WhatsApp = () => {
-  const whatsappNumber = "6283139283871";
-  const message = "Halo, saya ingin bertanya...";
+  const { translations } = useLanguage();
+
+  const whatsappNumber = "6281234515052";
+  const message = `${translations.whatsAppMessage}`;
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     message
@@ -26,7 +29,7 @@ const WhatsApp = () => {
         viewBox="0 0 308.00 308.00"
         stroke="#ffffff"
         stroke-width="0.0030800000000000003"
-        class="whatsapp-icon"
+        className="whatsapp-icon"
       >
         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
         <g

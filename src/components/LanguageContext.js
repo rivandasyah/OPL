@@ -1,4 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
+import imgImportExportIn from "../assets/bgImportExport.png";
+import imgImportExportEn from "../assets/bgImportExportEn.png";
+import imgImportAirIn from "../assets/importAir.png";
+import imgImportAirEn from "../assets/importAirEn.png";
+import imgImportSeaIn from "../assets/importSea.png";
+import imgImportSeaEn from "../assets/importSeaEn.png";
+
+
 
 const LanguageContext = createContext();
 
@@ -86,6 +94,11 @@ export function LanguageProvider({ children }) {
       aboutUsSendEmail: "Kirimkan Pesan",
       aboutUsEmail: "OPL_Indonesia",
       aboutUsPhone: "+62 812 3451 5052",
+      imgImportExport: imgImportExportIn,
+      imgImportAir: imgImportAirIn,
+      imgImportSea: imgImportSeaIn,
+      whatsAppMessage: "Halo, saya ingin bertanya...",
+      homeCalculateErrorContact: "Harga bersifat fleksibel dan dapat dinegosiasikan, Silakan hubungi kami untuk informasi lebih lanjut."
     },
     en: {
       home: "Home",
@@ -167,6 +180,11 @@ export function LanguageProvider({ children }) {
       aboutUsSendEmail: "Send Message",
       aboutUsEmail: "OPL_Indonesia",
       aboutUsPhone: "+62 812 3451 5052",
+      imgImportExport: imgImportExportEn,
+      imgImportAir: imgImportAirEn,
+      imgImportSea: imgImportSeaEn,
+      whatsAppMessage: "Hello, I want to ask about shipping service",
+      homeCalculateErrorContact: "The price is flexible and negotiable. Please contact us for further information."
     },
   };
 
