@@ -70,9 +70,9 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo-header">
+      <Link to="/" className="logo-header">
         <img src={logo} alt="Logo" />
-      </div>
+      </Link>
 
       <button className="hamburger-menu" onClick={toggleMobileMenu}>
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}

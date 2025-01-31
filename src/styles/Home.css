@@ -671,6 +671,7 @@ html, body {
     .service-cards {
         flex-direction: column;
         gap: 10px;
+        align-items: center;
         margin: 0 0 0 3%;
     }
 
@@ -727,11 +728,11 @@ html, body {
 /* Pengaturan khusus untuk tampilan layar lebih kecil dari 480px */
 @media (max-width: 480px) {
     .tagline {
-        font-size: 25px; /* Mengurangi ukuran font tagline */
+        font-size: 18px; /* Mengurangi ukuran font tagline */
     }
 
     .logo {
-        width: 400px; /* Menyesuaikan ukuran logo pada layar lebih kecil */
+        width: 300px; /* Menyesuaikan ukuran logo pada layar lebih kecil */
 
     }
 }
