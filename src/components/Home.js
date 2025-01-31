@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Latar from "../assets/bgBeranda.jpg";
 import Logo from "../assets/logoPutih.png";
 import SeaFreight from "../assets/bgSeaFreight.jpg";
@@ -66,21 +66,21 @@ function Home() {
               loading="lazy"
             />
             <h3 className="service-title">Sea Freight</h3>
-            <a className="service-link" href="/layanan-sea">
+            <Link className="service-link" to="/layanan-sea">
               {translations.homeSeeMore}
-            </a>
+            </Link>
           </div>
           <div className="service">
             <img
               src={AirFreight}
               alt="Air Freight"
               className="service-image"
-              loading="lazy"
+              loading="lazy"  
             />
             <h3 className="service-title">Air Freight</h3>
-            <a className="service-link" href="/layanan-air">
+            <Link className="service-link" to="/layanan-air">
               {translations.homeSeeMore}
-            </a>
+            </Link>
           </div>
           <div className="service">
             <img
@@ -90,9 +90,9 @@ function Home() {
               loading="lazy"
             />
             <h3 className="service-title">Customs Clearance</h3>
-            <a className="service-link" href="/layanan-customs">
+            <Link className="service-link" to="/layanan-customs">
               {translations.homeSeeMore}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
