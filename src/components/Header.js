@@ -71,7 +71,7 @@ function Header() {
   return (
     <header className="header">
       <Link to="/" className="logo-header">
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo Oscar Project Logistics OPL Indonesia" />
       </Link>
 
       <button className="hamburger-menu" onClick={toggleMobileMenu}>
